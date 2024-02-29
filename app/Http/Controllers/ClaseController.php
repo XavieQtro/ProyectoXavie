@@ -15,12 +15,12 @@ class ClaseController extends Controller
      */
     public function index()
     {
-        
-        $clientes = Cliente::all();
-        
-       // dd($clienteclases);
 
-        return view("clases.index", compact("clientes"));
+        $clases = Clase::all();
+
+        // dd($clienteclases);
+
+        return view("clases.index", compact("clases"));
     }
 
     /**
@@ -30,7 +30,7 @@ class ClaseController extends Controller
     {
         $clientes = Cliente::all();
         $clases = Clase::all();
-        return view("clases.create", compact("clientes","clases"));
+        return view("clases.create", compact("clientes", "clases"));
     }
 
     /**
@@ -38,9 +38,9 @@ class ClaseController extends Controller
      */
     public function store(Request $request)
     {
-        $clienteclase = ClienteClase::create($request->all());
+        Clase::create($request->all());
 
-        return redirect (route("Asistencia.index"));
+        return redirect(route("Clase.index"));
     }
 
     /**

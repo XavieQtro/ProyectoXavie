@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('clases', function (Blueprint $table) {
             $table->id('id');
-            $table->string('Nombre_clase');
+            $table->string('Nombre_clase')->unique();
             $table->time('Horario');
             $table->string('Instructor');
             $table->timestamps();
             $table->softDeletes();
 
-           /// $table->foreing('ID_clase')->references('ID')->on('clase');
+            /// $table->foreing('ID_clase')->references('ID')->on('clase');
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */

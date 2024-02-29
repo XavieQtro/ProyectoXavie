@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteClaseController;
 use App\Http\Controllers\ClaseController;
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +21,5 @@ Route::get('/', function () {
 
 Route::resource('/Asistencia',ClienteClaseController::class);
 Route::resource('/Clase',ClaseController::class);
+Route::resource('/Cliente',ClienteController::class);
 

@@ -10,11 +10,11 @@ class Clase extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['id','Nombre_clase','Horario','Instructor'];
-    protected $hidden = ['created_at','updated_at','deleted_at'];
+    protected $fillable = ['id', 'Nombre_clase', 'Horario', 'Instructor'];
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
-    public function clientes(){
-    
+    public function clientes()
+    {
         return $this->belongsToMany(Cliente::class);
-    }    
+    }
 }

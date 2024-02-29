@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col">
-        <h5>Asistencias.</h5>
+        <h5>Clases disponibles.</h5>
     </div>
     <div class="col">
         <a class="btn btn-outline-success" href="{{ route('Clase.create')}}">
@@ -20,29 +20,24 @@
 <table class="table table-dark">
     <thead>
         <tr>
-            <th>Id Cliente.</th>
-            <th>Nombre.</th>
+            <th>Id Clase.</th>
             <th>Clase.</th>
+            <th>Horario.</th>
             <th>Intructor</th>
-            
-
         </tr>
     <tbody>
-        @foreach ($clientes as $item)
+        @foreach ($clases as $item)
         <tr>
-            <td>{{$item->clientes[0]->id}}</td>
-            <td>{{$item->clientes[0]->Nombre}}</td>
+            <td>{{$item->id}}</td>
             <td>{{$item->Nombre_clase}}</td>
+            <td>{{$item->Horario}}</td>
             <td>{{$item->Instructor}}</td>
-           >
+
             <td>
-
-
-               <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                 </>
                 <a class="btn btn-outline-danger btn-sm" href="">
                     <i class="fa fa-trash" aria-hidden="true"></i></a>
-                    
             </td>
         </tr>
         @endforeach
